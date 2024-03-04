@@ -8,7 +8,7 @@ class ServicoSerializer(serializers.ModelSerializer):
 
 
 class AvaliacaoSerializer(serializers.ModelSerializer):
-    servico_id = serializers.PrimaryKeyRelatedField(queryset=Servico.objects.all())
+    # servico_id = serializers.PrimaryKeyRelatedField(queryset=Servico.objects.all())
 
     
 

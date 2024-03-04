@@ -12,7 +12,7 @@ urlpatterns = [
     path('servicos/', ServicosAPIView.as_view(), name='servicos'),
     path('servicos/<int:pk>/', ServicoAPIView.as_view(), name='servico'),
     path('servicos/<int:servico_pk>/avaliacoes/', AvaliacoesAPIView.as_view(), name='curso_avaliacoes'),
-    path('servicos/<int:servico_pk>/avaliacoes/<int:avaliacao_pk>/', ServicosAPIView.as_view(), name='curso_avaliacao'),
+    path('servicos/<int:servico_pk>/avaliacoes/<int:avaliacao_pk>/', AvaliacoesAPIView.as_view(), name='curso_avaliacao'),
 
     path('avaliacoes/', AvaliacoesAPIView.as_view(), name='avaliacoes'),    
     path('avaliacoes/<int:avaliacao_pk>/', AvaliacaoAPIView.as_view(), name='avaliacao'),
