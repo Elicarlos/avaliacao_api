@@ -13,9 +13,16 @@ class ServicoAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ServicoSerializer
 
 
-class AvaliacaosAPIView(generics.ListCreateAPIView):
+class AvaliacoesAPIView(generics.ListCreateAPIView):
     queryset = Avaliacao.objects.all()
     serializer_class = AvaliacaoSerializer
+
+    # subescrevendo
+    def get_queryset(self):
+        if self.kwargs.get('servico_id'):
+            return self.filter_queryset(servico_id=self.kwargs.get('servico_id'))
+        
+        return self.queryset.all()
 
 
 class AvaliacaoAPIView(generics.RetrieveUpdateDestroyAPIView):
